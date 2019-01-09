@@ -1,5 +1,21 @@
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
-</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+@Component
+export default class Home extends Vue {
+  private text:string = '123';
+  constructor(){
+    super()
+  }
+  render(createElement:Function) {
+    return createElement(
+      'div', {
+      attrs: {
+        id   : 'foo',
+        class: 'foox'
+      }
+    }, [this.text]
+    )
+  }
+}
+</script>
