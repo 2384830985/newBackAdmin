@@ -4,7 +4,7 @@ import Admin from './store/index'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-      modules:{
-          Admin
-      }
+    modules:{
+        Admin
+    }
 });

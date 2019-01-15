@@ -4,6 +4,11 @@ export const xxx:Function = (data:Object)=>{
     return request({
         url: '/interface/paged',
         method: 'post',
-        params: data
+        params: data,
+        loading: {
+            type: 'loading',
+            options: {
+            }
+        }
     })
 }

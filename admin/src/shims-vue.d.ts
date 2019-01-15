@@ -12,3 +12,4 @@ declare module 'vue/types/vue' {
       $route : Route;
   }
 }
+

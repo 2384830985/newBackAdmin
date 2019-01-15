@@ -1,5 +1,5 @@
-declare namespace Ajax{
-    export interface xxx{
+// declare namespace Ajax{
+//     export interface xxx{
         
-    }
-}
+//     }
+// }

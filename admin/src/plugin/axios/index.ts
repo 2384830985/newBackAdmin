@@ -1,21 +1,18 @@
 import store from '@/store';
 import util from '@/libs/util';
-import aixos from 'axios'
-import {Message} from 'element-ui'
-import { register } from 'register-service-worker';
+import aixos from 'axios';
+import {Message} from 'element-ui';
+import {State, Action, Getter } from 'vuex-class';
+import loading from '@/libs/loading';
 
 const errorLog = (err:any)=>{
-    // 添加日志
-    store.dispatch('admin/log/add',{
-        type: 'error',
-        err,
-        info: '数据请求异常'
-    })
     // 添加打印错误 打印到控制台
     if (process.env.NODE_ENV === 'development') {
         util.log.danger('>>>>>> Error >>>>>>')
         console.log(err)
     }
+    util.log.danger(456)
+    console.log(store.state)
     // 显示提示
     Message({
         message : err.message,

@@ -1,4 +1,5 @@
 import util from '@/libs/util.js'
+import {ActionTree} from 'vuex'
 
 interface actionsAdd {
         type?: Object,
@@ -6,30 +7,7 @@ interface actionsAdd {
     vm  ?    : Object,
         info?: Object,
 }
-
-export default {
-  namespaced: true,
-  state     : {
-    // 错误日志
-    list: []
-  },
-  getters: {
-    /**
-     * @description 返回现存 log (all) 的条数
-     * @param {*} state vuex state
-     */
-    length (state:any) {
-      return state.list.length
-    },
-    /**
-     * @description 返回现存 log (error) 的条数
-     * @param {*} state vuex state
-     */
-    lengthError (state:any) {
-      return state.list.filter((l:any) => l.type === 'error').length
-    }
-  },
-  actions: {
+const actions: ActionTree<String, any> = {
     /**
      * @description 添加一个日志
      * @param {Object} param type {String} 类型
@@ -37,7 +15,8 @@ export default {
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param info {String} 信息
      */
-    add ({ state, rootState }:any, { type, err, vm, info }:actionsAdd) {
+    async add ({ state, rootState }:any, { type, err, vm, info }:actionsAdd) {
+      console.log(789)
       // store 赋值
       state.list.push(Object.assign({
         // 记录类型
@@ -65,7 +44,30 @@ export default {
         info
       }))
     }
+}
+export default {
+  namespaced: true,
+  state     : {
+    // 错误日志
+    list: []
   },
+  getters: {
+    /**
+     * @description 返回现存 log (all) 的条数
+     * @param {*} state vuex state
+     */
+    length (state:any) {
+      return state.list.length
+    },
+    /**
+     * @description 返回现存 log (error) 的条数
+     * @param {*} state vuex state
+     */
+    lengthError (state:any) {
+      return state.list.filter((l:any) => l.type === 'error').length
+    }
+  },
+  actions,
   mutations: {
     /**
      * @description 清空日志

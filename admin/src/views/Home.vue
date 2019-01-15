@@ -29,10 +29,10 @@ export default class Home extends Vue {
      * 开始执行
      */
     created() {
-      xx.xxx({})
-        .then((res:object)=>{
-          console.log(res)
-        })
+      // xx.xxx({})
+      //   .then((res:object)=>{
+      //     console.log(res)
+      //   })
     }
 
     
