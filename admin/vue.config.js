@@ -3,7 +3,7 @@ module.exports = {
     // 选项...
     // 当使用基于 HTML5 history.pushState 的路由时；
     // 当使用 pages 选项构建多页面应用时。
-    baseUrl: "",
+    baseUrl: ".",
     // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录。注意目标目录在构建之前会被清除 (构建时传入 --no-clean 可关闭该行为)。
     outputDir: "webApp",
     // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
